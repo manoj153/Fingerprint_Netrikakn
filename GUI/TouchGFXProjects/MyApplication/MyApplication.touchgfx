@@ -1,0 +1,477 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "Filename": "Under_Construction_PNG.png",
+            "Alpha": 255,
+            "ScalingAlgorithm": "Nearest-neighbor",
+            "Name": "U_construction",
+            "X": 0,
+            "Y": -5,
+            "Width": 480,
+            "Height": 277,
+            "Type": "ScalableImage",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "Header_Background",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 50,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "Heading_Title",
+            "X": 54,
+            "Y": 6,
+            "Width": 382,
+            "Height": 35,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Blue_Icons_User_48.png",
+            "IconReleased": "__designer\\Blue_Icons_User_48.png",
+            "IconX": 62,
+            "IconY": 7,
+            "IconHeight": 46,
+            "IconWidth": 46,
+            "ButtonStyle": "Style4",
+            "Name": "FingerprintAcess_Button",
+            "X": 0,
+            "Y": 63,
+            "Width": 170,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": true,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 58,
+              "Green": 106,
+              "Blue": 166
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "Fingerprint_Acess",
+            "X": 0,
+            "Y": 124,
+            "Width": 154,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": true,
+            "Moveable": false
+          },
+          {
+            "Components": [],
+            "FileName": "__designer\\Dark_Icons_Alert_32.png",
+            "Color": {
+              "Red": 255,
+              "Green": 87,
+              "Blue": 87
+            },
+            "ModalX": 216,
+            "ModalY": 116,
+            "ModalWidth": 48,
+            "ModalHeight": 41,
+            "ContX": 0,
+            "ContY": 0,
+            "Alpha": 150,
+            "Name": "modalWindow1",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "ModalWindow",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 0,
+            "Y": 249,
+            "Width": 198,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Blue_Icons_News_32.png",
+            "IconReleased": "__designer\\Blue_Icons_News_32.png",
+            "IconX": 15,
+            "IconY": 17,
+            "IconHeight": 26,
+            "IconWidth": 30,
+            "IconStyle": "Icon37",
+            "Name": "AboutMe_button",
+            "X": 336,
+            "Y": 212,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": true,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 81,
+              "Green": 211,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "AboutMe_Manoj",
+            "X": 393,
+            "Y": 231,
+            "Width": 85,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "FingerprintAcess_Button",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "AboutMe_button",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "About_Me_Screen",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "Screen1"
+      },
+      {
+        "Components": [
+          {
+            "Color": {
+              "Red": 19,
+              "Green": 37,
+              "Blue": 94
+            },
+            "Alpha": 255,
+            "Name": "box1",
+            "X": 1,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Filename": "manoj_png.png",
+            "Alpha": 255,
+            "ScalingAlgorithm": "Bilinear Interpolation",
+            "Name": "scalableImage1",
+            "X": 26,
+            "Y": 26,
+            "Width": 104,
+            "Height": 98,
+            "Type": "ScalableImage",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId10",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 158,
+              "Green": 153,
+              "Blue": 153
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "name",
+            "X": 153,
+            "Y": 36,
+            "Width": 229,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "Custom1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 158,
+              "Green": 153,
+              "Blue": 153
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "Title",
+            "X": 153,
+            "Y": 62,
+            "Width": 177,
+            "Height": 20,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Alpha": 255,
+            "IconPressed": "__designer\\Dark_Icons_Back_arrow_32.png",
+            "IconReleased": "__designer\\Dark_Icons_Back_arrow_32.png",
+            "IconX": 21,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 19,
+            "Name": "Back_main_button",
+            "X": 0,
+            "Y": 212,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 168,
+              "Green": 189,
+              "Blue": 12
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "BacK_button_text",
+            "X": 66,
+            "Y": 231,
+            "Width": 40,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Alpha": 255,
+            "Selected": false,
+            "Deselectable": false,
+            "FileNameSelected": "__designer\\Blue_Icons_eMail_48.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Icons_eMail_48.png",
+            "FileNameUnselected": "__designer\\Blue_Icons_eMail_48.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Icons_eMail_48.png",
+            "Name": "Email_Icon",
+            "X": 146,
+            "Y": 117,
+            "Width": 46,
+            "Height": 45,
+            "Type": "RadioButton",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId15",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 148,
+              "Green": 148,
+              "Blue": 148
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea2",
+            "X": 205,
+            "Y": 128,
+            "Width": 268,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Filename": "whtasapp_icon_png.png",
+            "Alpha": 255,
+            "ScalingAlgorithm": "Nearest-neighbor",
+            "Name": "scalableImage2",
+            "X": 145,
+            "Y": 175,
+            "Width": 47,
+            "Height": 40,
+            "Type": "ScalableImage",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "TextId16",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 122,
+              "Green": 122,
+              "Blue": 122
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "mobile_number",
+            "X": 205,
+            "Y": 187,
+            "Width": 131,
+            "Height": 23,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "Back_main_button",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen1",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "About_Me_Screen"
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication",
+    "Width": 480,
+    "Height": 272,
+    "Target": "STM32F746G-DISCO",
+    "TargetBpp": 16,
+    "StartupScreenName": "Screen1",
+    "Skin": "Blue",
+    "TouchGfxPath": "C:\\touchgfx\\4.8.0\\"
+  },
+  "Version": "4.8.0"
+}

@@ -1,0 +1,12 @@
+assets/images/__designer/Blue_Buttons_Round_Edge_small.png
+assets/images/__designer/Blue_Buttons_Round_Edge_icon_button_pressed.png
+assets/images/__designer/Blue_Icons_News_32.png
+assets/images/__designer/Dark_Icons_Back_arrow_32.png
+assets/images/__designer/Dark_Icons_Alert_32.png
+assets/images/__designer/Blue_Buttons_Round_icon_button.png
+assets/images/__designer/Blue_Icons_eMail_48.png
+assets/images/__designer/Blue_Icons_User_48.png
+assets/images/__designer/Blue_Buttons_Round_Edge_small_pressed.png
+assets/images/manoj_png.png
+assets/images/whtasapp_icon_png.png
+assets/images/Under_Construction_PNG.png
