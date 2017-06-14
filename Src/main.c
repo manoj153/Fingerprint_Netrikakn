@@ -40,7 +40,7 @@
 #include "stm32f7xx_hal.h"
 
 /* USER CODE BEGIN Includes */
-
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -186,6 +186,7 @@ void SystemClock_Config(void)
   /* SysTick_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
+
 
 /* USART1 init function */
 static void MX_USART1_UART_Init(void)
@@ -852,6 +853,15 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if (huart->Instance == USART1)
+	{
+		//what to do after RX cpmplete
+		
+	}
+}
+
 
 /* USER CODE END 4 */
 

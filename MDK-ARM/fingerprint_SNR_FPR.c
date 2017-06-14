@@ -18,6 +18,7 @@ uint8_t gRsLength;
 void TxByte(uint8_t temp)
 {
 	HAL_UART_Transmit_IT(&huart1, &temp, 1);
+	
 }
 
 uint8_t TxAndRsCmd(uint8_t Scnt, uint8_t Rcnt, uint8_t Delay)
@@ -31,9 +32,9 @@ uint8_t TxAndRsCmd(uint8_t Scnt, uint8_t Rcnt, uint8_t Delay)
 			TxByte(gTxBuf[i]);		 
 			CheckSum ^= gTxBuf[i];
 	 }	
-	 TxByte(CheckSum);
-	 TxByte(CMD_TAIL);  
-	 gRsLength = 0;
+	 TxByte(CheckSum); 
+	 TxByte(CMD_TAIL); //0xF5  
+	 gRsLength = 0; // Length of received bytes 
 	 RsTimeCnt = Delay * 120000;
 	 while (gRsLength < Rcnt && RsTimeCnt > 0)
 			RsTimeCnt--;
