@@ -1,0 +1,26 @@
+--cpu Cortex-M7.fp.sp
+"fingerprint_uart_sn-fpr\system_stm32f7xx.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_uart.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_pwr.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_flash.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_cortex.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_rcc.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_rcc_ex.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_gpio.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_i2c_ex.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_dma.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_pwr_ex.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_dma_ex.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_flash_ex.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_tim.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_i2c.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_tim_ex.o"
+"fingerprint_uart_sn-fpr\startup_stm32f746xx.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_hal_msp.o"
+"fingerprint_uart_sn-fpr\stm32f7xx_it.o"
+"fingerprint_uart_sn-fpr\main.o"
+--library_type=microlib --strict --scatter "fingerprint_UART_SN-FPR\fingerprint_UART_SN-FPR.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "fingerprint_UART_SN-FPR.map" -o fingerprint_UART_SN-FPR\fingerprint_UART_SN-FPR.axf
