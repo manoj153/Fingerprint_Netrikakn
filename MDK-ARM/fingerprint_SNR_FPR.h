@@ -1,7 +1,8 @@
 #ifndef _FINGERPRINT_SNR_FPR_H
 #define _FINGERPRINT_SNR_FPR_H
 #include "stm32f7xx_hal.h"
-
+/*includes*/
+extern UART_HandleTypeDef huart1;
 /*Function Prototypes*/
 HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
 

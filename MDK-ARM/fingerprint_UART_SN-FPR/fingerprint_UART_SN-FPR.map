@@ -383,6 +383,8 @@ Section Cross References
     main.o(i.main) refers to main.o(i.SystemClock_Config) for SystemClock_Config
     main.o(i.main) refers to main.o(i.MX_GPIO_Init) for MX_GPIO_Init
     main.o(i.main) refers to main.o(i.MX_USART1_UART_Init) for MX_USART1_UART_Init
+    fingerprint_snr_fpr.o(i.TxByte) refers to stm32f7xx_hal_uart.o(i.HAL_UART_Transmit_IT) for HAL_UART_Transmit_IT
+    fingerprint_snr_fpr.o(i.TxByte) refers to main.o(.bss) for huart1
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -704,8 +706,12 @@ Removing Unused input sections from the image.
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
     Removing main.o(.rrx_text), (6 bytes).
+    Removing fingerprint_snr_fpr.o(.rev16_text), (4 bytes).
+    Removing fingerprint_snr_fpr.o(.revsh_text), (4 bytes).
+    Removing fingerprint_snr_fpr.o(.rrx_text), (6 bytes).
+    Removing fingerprint_snr_fpr.o(i.TxByte), (20 bytes).
 
-300 unused section(s) (total 28054 bytes) removed from the image.
+304 unused section(s) (total 28088 bytes) removed from the image.
 
 ==============================================================================
 
@@ -735,19 +741,19 @@ Image Symbol Table
     ../Src/stm32f7xx_hal_msp.c               0x00000000   Number         0  stm32f7xx_hal_msp.o ABSOLUTE
     ../Src/stm32f7xx_it.c                    0x00000000   Number         0  stm32f7xx_it.o ABSOLUTE
     ../Src/system_stm32f7xx.c                0x00000000   Number         0  system_stm32f7xx.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c 0x00000000   Number         0  stm32f7xx_hal.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cortex.c 0x00000000   Number         0  stm32f7xx_hal_cortex.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma.c 0x00000000   Number         0  stm32f7xx_hal_dma.o ABSOLUTE
@@ -769,6 +775,8 @@ Image Symbol Table
     ..\Src\stm32f7xx_it.c                    0x00000000   Number         0  stm32f7xx_it.o ABSOLUTE
     ..\Src\system_stm32f7xx.c                0x00000000   Number         0  system_stm32f7xx.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    fingerprint_SNR_FPR.c                    0x00000000   Number         0  fingerprint_snr_fpr.o ABSOLUTE
+    fingerprint_SNR_FPR.c                    0x00000000   Number         0  fingerprint_snr_fpr.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
     startup_stm32f746xx.s                    0x00000000   Number         0  startup_stm32f746xx.o ABSOLUTE
@@ -1050,17 +1058,17 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x000001c8   Data   RO         2012    RESET               startup_stm32f746xx.o
-    0x080001c8   0x00000000   Code   RO         2145  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001c8   0x00000004   Code   RO         2148    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001cc   0x00000004   Code   RO         2151    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001d0   0x00000000   Code   RO         2153    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001d0   0x00000000   Code   RO         2155    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001d0   0x00000008   Code   RO         2156    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001d8   0x00000000   Code   RO         2158    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001d8   0x00000000   Code   RO         2160    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001d8   0x00000004   Code   RO         2149    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001c8   0x00000000   Code   RO         2173  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001c8   0x00000004   Code   RO         2176    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001cc   0x00000004   Code   RO         2179    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001d0   0x00000000   Code   RO         2181    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001d0   0x00000000   Code   RO         2183    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001d0   0x00000008   Code   RO         2184    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001d8   0x00000000   Code   RO         2186    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001d8   0x00000000   Code   RO         2188    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001d8   0x00000004   Code   RO         2177    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001dc   0x00000024   Code   RO         2013    .text               startup_stm32f746xx.o
-    0x08000200   0x00000024   Code   RO         2162    .text               mc_w.l(init.o)
+    0x08000200   0x00000024   Code   RO         2190    .text               mc_w.l(init.o)
     0x08000224   0x00000028   Code   RO         1201    i.HAL_DMA_Abort_IT  stm32f7xx_hal_dma.o
     0x0800024c   0x00000218   Code   RO         1104    i.HAL_GPIO_Init     stm32f7xx_hal_gpio.o
     0x08000464   0x0000000c   Code   RO         1108    i.HAL_GPIO_WritePin  stm32f7xx_hal_gpio.o
@@ -1110,13 +1118,13 @@ Memory Map of the image
     0x08002ac6   0x00000002   PAD
     0x08002ac8   0x00000010   Code   RO         2057    i.USART1_IRQHandler  stm32f7xx_it.o
     0x08002ad8   0x00000004   Code   RO         2094    i._Error_Handler    main.o
-    0x08002adc   0x0000000e   Code   RO         2166    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002aea   0x00000002   Code   RO         2167    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002aec   0x0000000e   Code   RO         2168    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002adc   0x0000000e   Code   RO         2194    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002aea   0x00000002   Code   RO         2195    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002aec   0x0000000e   Code   RO         2196    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08002afa   0x00000002   PAD
     0x08002afc   0x00000078   Code   RO         2095    i.main              main.o
     0x08002b74   0x00000018   Data   RO            6    .constdata          system_stm32f7xx.o
-    0x08002b8c   0x00000020   Data   RO         2164    Region$$Table       anon$$obj.o
+    0x08002b8c   0x00000020   Data   RO         2192    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000478, Max: 0x00050000, ABSOLUTE)

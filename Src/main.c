@@ -100,7 +100,7 @@ int main(void)
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
-
+	printf("Befote Entering main while loop");
   /* USER CODE END 2 */
 
   /* Infinite loop */

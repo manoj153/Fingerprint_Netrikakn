@@ -20,6 +20,7 @@
 "fingerprint_uart_sn-fpr\stm32f7xx_hal_msp.o"
 "fingerprint_uart_sn-fpr\stm32f7xx_it.o"
 "fingerprint_uart_sn-fpr\main.o"
+"fingerprint_uart_sn-fpr\fingerprint_snr_fpr.o"
 --library_type=microlib --strict --scatter "fingerprint_UART_SN-FPR\fingerprint_UART_SN-FPR.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
