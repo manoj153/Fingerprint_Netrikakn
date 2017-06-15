@@ -25,6 +25,9 @@ Commit Message and Comment,
 1. Give a short and clear commit message 
 2. Add more comment for other developer to understand what exactly your changes do !
 
+Date Time Format usage :
+
+1.DDMMYY HRMISE //Day_Month_Year Hour_Minutes_Seconds
 Project Currently Running by :
 
 Manojkumar Subramaniam 
