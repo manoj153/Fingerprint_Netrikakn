@@ -13,8 +13,20 @@ Documentation And Datasheets :
 
 1. /Doc
 
+Commiting Guidline :
+
+Few sign rules,
+
+1. + indicates new file addition 
+2. += indicates files update
+
+Commit Message and Comment,
+
+1. Give a short and clear commit message 
+2. Add more comment for other developer to understand what exactly your changes do !
+
 Project Currently Running by :
 
 Manojkumar Subramaniam 
-
+manojkumar99tech@gmail.com
 +60173304029
