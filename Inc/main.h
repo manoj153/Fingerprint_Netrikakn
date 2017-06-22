@@ -200,8 +200,6 @@
 #define LCD_G4_GPIO_Port GPIOJ
 #define LCD_G5_Pin GPIO_PIN_0
 #define LCD_G5_GPIO_Port GPIOK
-#define ARDUINO_RX_D0_Pin GPIO_PIN_7
-#define ARDUINO_RX_D0_GPIO_Port GPIOC
 #define FMC_A3_Pin GPIO_PIN_3
 #define FMC_A3_GPIO_Port GPIOF
 #define LCD_CLK_Pin GPIO_PIN_14
@@ -214,8 +212,6 @@
 #define LCD_G3_GPIO_Port GPIOJ
 #define FMC_SDCLK_Pin GPIO_PIN_8
 #define FMC_SDCLK_GPIO_Port GPIOG
-#define ARDUINO_TX_D1_Pin GPIO_PIN_6
-#define ARDUINO_TX_D1_GPIO_Port GPIOC
 #define FMC_A4_Pin GPIO_PIN_4
 #define FMC_A4_GPIO_Port GPIOF
 #define FMC_SDNME_Pin GPIO_PIN_5

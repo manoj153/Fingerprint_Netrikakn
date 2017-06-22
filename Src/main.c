@@ -44,8 +44,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
-uint8_t UART_Rx_Cmplt_Flag = 0;
+
 UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
@@ -56,6 +57,8 @@ UART_HandleTypeDef huart1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_USART6_UART_Init(void);
+static void MX_NVIC_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -68,7 +71,7 @@ static void MX_USART1_UART_Init(void);
 
 int main(void)
 {
-	
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -98,6 +101,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
+  MX_USART6_UART_Init();
+
+  /* Initialize interrupts */
+  MX_NVIC_Init();
 
   /* USER CODE BEGIN 2 */
 	printf("Befote Entering main while loop");
@@ -108,8 +115,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-	uint8_t VerifyUser(void);
-		HAL_Delay(5000);
+
   /* USER CODE BEGIN 3 */
 
   }
@@ -169,8 +175,9 @@ void SystemClock_Config(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART1;
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_USART6;
   PeriphClkInitStruct.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
+  PeriphClkInitStruct.Usart6ClockSelection = RCC_USART6CLKSOURCE_PCLK2;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
@@ -188,6 +195,14 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
+/** NVIC Configuration
+*/
+static void MX_NVIC_Init(void)
+{
+  /* USART6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(USART6_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART6_IRQn);
+}
 
 /* USART1 init function */
 static void MX_USART1_UART_Init(void)
@@ -204,6 +219,27 @@ static void MX_USART1_UART_Init(void)
   huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
   if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+/* USART6 init function */
+static void MX_USART6_UART_Init(void)
+{
+
+  huart6.Instance = USART6;
+  huart6.Init.BaudRate = 19200;
+  huart6.Init.WordLength = UART_WORDLENGTH_8B;
+  huart6.Init.StopBits = UART_STOPBITS_1;
+  huart6.Init.Parity = UART_PARITY_NONE;
+  huart6.Init.Mode = UART_MODE_TX_RX;
+  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart6.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart6.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart6) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -268,14 +304,12 @@ static void MX_USART1_UART_Init(void)
      PJ11   ------> LTDC_G4
      PK0   ------> LTDC_G5
      PC8   ------> SDMMC1_D0
-     PC7   ------> USART6_RX
      PF3   ------> FMC_A3
      PI14   ------> LTDC_CLK
      PH4   ------> USB_OTG_HS_ULPI_NXT
      PJ8   ------> LTDC_G1
      PJ10   ------> LTDC_G3
      PG8   ------> FMC_SDCLK
-     PC6   ------> USART6_TX
      PF4   ------> FMC_A4
      PH5   ------> FMC_SDNWE
      PH3   ------> FMC_SDNE0
@@ -711,14 +745,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_EVT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(LCD_INT_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : ARDUINO_RX_D0_Pin ARDUINO_TX_D1_Pin */
-  GPIO_InitStruct.Pin = ARDUINO_RX_D0_Pin|ARDUINO_TX_D1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF8_USART6;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : ULPI_NXT_Pin */
   GPIO_InitStruct.Pin = ULPI_NXT_Pin;
