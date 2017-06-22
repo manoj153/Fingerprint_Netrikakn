@@ -1,0 +1,14 @@
+.\output\fingerprint.o: ..\user\fingerprint.c
+.\output\fingerprint.o: ..\user\fingerprint.h
+.\output\fingerprint.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\fingerprint.o: ..\Lib\cmsis\stm32f10x.h
+.\output\fingerprint.o: ..\Lib\cmsis\core_cm3.h
+.\output\fingerprint.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\fingerprint.o: ..\Lib\cmsis\system_stm32f10x.h
+.\output\fingerprint.o: ..\user\stm32f10x_conf.h
+.\output\fingerprint.o: ..\Lib\inc\stm32f10x_gpio.h
+.\output\fingerprint.o: ..\Lib\cmsis\stm32f10x.h
+.\output\fingerprint.o: ..\Lib\inc\stm32f10x_rcc.h
+.\output\fingerprint.o: ..\Lib\inc\stm32f10x_tim.h
+.\output\fingerprint.o: ..\Lib\inc\stm32f10x_usart.h
+.\output\fingerprint.o: ..\Lib\inc\misc.h
