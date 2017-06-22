@@ -148,7 +148,7 @@
             "Name": "textArea1",
             "X": 0,
             "Y": 249,
-            "Width": 198,
+            "Width": 200,
             "Height": 23,
             "Type": "TextArea",
             "Visible": true,
@@ -307,7 +307,7 @@
             "Name": "Title",
             "X": 153,
             "Y": 62,
-            "Width": 177,
+            "Width": 178,
             "Height": 20,
             "Type": "TextArea",
             "Visible": true,
@@ -434,7 +434,7 @@
             "Name": "mobile_number",
             "X": 205,
             "Y": 187,
-            "Width": 131,
+            "Width": 134,
             "Height": 23,
             "Type": "TextArea",
             "Visible": true,
@@ -461,6 +461,11 @@
           }
         ],
         "Name": "About_Me_Screen"
+      },
+      {
+        "Components": [],
+        "Interactions": [],
+        "Name": "FingerPrint"
       }
     ],
     "CustomContainerDefinitions": [],

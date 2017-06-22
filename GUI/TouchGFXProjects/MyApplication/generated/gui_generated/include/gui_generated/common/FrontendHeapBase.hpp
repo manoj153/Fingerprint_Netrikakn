@@ -17,6 +17,8 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <gui/about_me_screen_screen/About_Me_ScreenView.hpp>
 #include <gui/about_me_screen_screen/About_Me_ScreenPresenter.hpp>
+#include <gui/fingerprint_screen/FingerPrintView.hpp>
+#include <gui/fingerprint_screen/FingerPrintPresenter.hpp>
 
 
 /**
@@ -41,7 +43,8 @@ public:
      */
     typedef meta::TypeList< Screen1View,
             meta::TypeList< About_Me_ScreenView,
-            meta::Nil >
+            meta::TypeList< FingerPrintView,
+            meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -55,7 +58,8 @@ public:
      */
     typedef meta::TypeList< Screen1Presenter,
             meta::TypeList< About_Me_ScreenPresenter,
-            meta::Nil >
+            meta::TypeList< FingerPrintPresenter,
+            meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**

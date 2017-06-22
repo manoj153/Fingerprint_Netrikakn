@@ -447,6 +447,16 @@
               <FilePath>..\..\..\..\gui\src\about_me_screen_screen\About_Me_ScreenView.cpp</FilePath>
             </File>
             <File>
+              <FileName>FingerPrintPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\gui\src\fingerprint_screen\FingerPrintPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FingerPrintView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\gui\src\fingerprint_screen\FingerPrintView.cpp</FilePath>
+            </File>
+            <File>
               <FileName>FrontendApplication.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\..\..\gui\src\common\FrontendApplication.cpp</FilePath>
@@ -475,6 +485,11 @@
               <FileName>About_Me_ScreenViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\..\..\generated\gui_generated\src\about_me_screen_screen\About_Me_ScreenViewBase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FingerPrintViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\generated\gui_generated\src\fingerprint_screen\FingerPrintViewBase.cpp</FilePath>
             </File>
             <File>
               <FileName>FrontendApplicationBase.cpp</FileName>

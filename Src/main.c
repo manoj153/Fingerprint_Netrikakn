@@ -44,7 +44,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
-
+uint8_t UART_Rx_Cmplt_Flag = 0;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
@@ -108,7 +108,8 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-
+	uint8_t VerifyUser(void);
+		HAL_Delay(5000);
   /* USER CODE BEGIN 3 */
 
   }
@@ -857,7 +858,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == USART1)
 	{
-		//what to do after RX cpmplete
+		UART_Rx_Cmplt_Flag = 55; // Flag to say the Receiption were success. Will be used in Fingerprint_SNR_FPR.c
 		
 	}
 }

@@ -9,6 +9,8 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <gui/about_me_screen_screen/About_Me_ScreenView.hpp>
 #include <gui/about_me_screen_screen/About_Me_ScreenPresenter.hpp>
+#include <gui/fingerprint_screen/FingerPrintView.hpp>
+#include <gui/fingerprint_screen/FingerPrintPresenter.hpp>
 
 using namespace touchgfx;
 

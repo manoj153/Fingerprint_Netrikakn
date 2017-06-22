@@ -4,7 +4,15 @@
 /*includes*/
 extern UART_HandleTypeDef huart1;
 /*Function Prototypes*/
-HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+extern HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+extern void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+uint8_t VerifyUser(void);
+uint8_t IsMasterUser(uint8_t UserID);
+/*<<<<<<<<<<<<<<<<<<<<<<END FUNCTION PROTOTYPE>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+/*variable definiton*/
+extern uint8_t UART_Rx_Cmplt_Flag; // declared in main.c 
+/*<<<<<<<<<<<<End Variable Defination >>>>>>>*/
 
 #define TRUE  1
 #define FALSE 0

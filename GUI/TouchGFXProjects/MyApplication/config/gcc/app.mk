@@ -33,7 +33,7 @@
 #
 ###############################################################################
 # Relative location of the TouchGFX framework from root of application
-touchgfx_path := ../../touchgfx/4.8.0/touchgfx
+touchgfx_path := ../../../../../touchgfx/4.8.0/touchgfx
 
 # Optional additional compiler flags
 user_cflags := -DUSE_BPP=16

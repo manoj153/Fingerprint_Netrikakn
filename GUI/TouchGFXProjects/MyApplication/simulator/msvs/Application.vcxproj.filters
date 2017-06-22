@@ -20,6 +20,9 @@
     <Filter Include="Header Files\gui\common">
       <UniqueIdentifier>{A9742B9C-2FE8-4181-90BF-59EA2B237B2D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\fingerprint_screen">
+      <UniqueIdentifier>{FBD9D3B6-D762-4F5A-9A7D-E8C8C4B62C9C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\gui\model">
       <UniqueIdentifier>{567D8961-8DF2-4750-B76E-4A8E9E3A7D6E}</UniqueIdentifier>
     </Filter>
@@ -31,6 +34,9 @@
     </Filter>
     <Filter Include="Header Files\gui_generated\common">
       <UniqueIdentifier>{F6A69C3F-DAFA-4012-99F1-58B4E3F42A0B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui_generated\fingerprint_screen">
+      <UniqueIdentifier>{DE96047E-9F2B-437E-A086-0E6B4C8F2851}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui_generated\screen1_screen">
       <UniqueIdentifier>{97D4598A-4510-4383-8988-3A3405352B58}</UniqueIdentifier>
@@ -145,6 +151,9 @@
     <Filter Include="Source Files\gui\common">
       <UniqueIdentifier>{41F074FA-F9D7-4124-8BCD-6F6DE4405896}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\fingerprint_screen">
+      <UniqueIdentifier>{D9007763-9824-41DF-AD0C-62EDD987258C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\gui\model">
       <UniqueIdentifier>{20994635-0CDB-4F09-8755-8A743BF0B421}</UniqueIdentifier>
     </Filter>
@@ -159,6 +168,9 @@
     </Filter>
     <Filter Include="Source Files\gui_generated\common">
       <UniqueIdentifier>{663D1DF6-89B5-4B00-A61F-8FC13A617673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui_generated\fingerprint_screen">
+      <UniqueIdentifier>{DA4DB0B7-557F-47B6-9C67-377E7A0FB550}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui_generated\screen1_screen">
       <UniqueIdentifier>{17C4B262-20B0-4C1D-BA2A-29A11F91EAD4}</UniqueIdentifier>
@@ -201,6 +213,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
       <Filter>Source Files\gui_generated\common</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\fingerprint_screen\FingerPrintViewBase.cpp">
+      <Filter>Source Files\gui_generated\fingerprint_screen</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
       <Filter>Source Files\gui_generated\screen1_screen</Filter>
     </ClCompile>
@@ -212,6 +227,12 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
       <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\fingerprint_screen\FingerPrintPresenter.cpp">
+      <Filter>Source Files\gui\fingerprint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\fingerprint_screen\FingerPrintView.cpp">
+      <Filter>Source Files\gui\fingerprint_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\model\Model.cpp">
       <Filter>Source Files\gui\model</Filter>
@@ -697,6 +718,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
       <Filter>Header Files\gui_generated\common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\fingerprint_screen\FingerPrintViewBase.hpp">
+      <Filter>Header Files\gui_generated\fingerprint_screen</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
       <Filter>Header Files\gui_generated\screen1_screen</Filter>
     </ClInclude>
@@ -711,6 +735,12 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
       <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\fingerprint_screen\FingerPrintPresenter.hpp">
+      <Filter>Header Files\gui\fingerprint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\fingerprint_screen\FingerPrintView.hpp">
+      <Filter>Header Files\gui\fingerprint_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
       <Filter>Header Files\gui\model</Filter>

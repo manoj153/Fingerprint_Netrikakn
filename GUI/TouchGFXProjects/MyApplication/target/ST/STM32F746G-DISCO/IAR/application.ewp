@@ -1043,6 +1043,12 @@
           </file>
         </group>
         <group>
+          <name>fingerprint_screen</name>
+          <file>
+            <name>$PROJ_DIR$\..\..\..\..\generated\gui_generated\src\fingerprint_screen\FingerPrintViewBase.cpp</name>
+          </file>
+        </group>
+        <group>
           <name>screen1_screen</name>
           <file>
             <name>$PROJ_DIR$\..\..\..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp</name>
@@ -1122,6 +1128,15 @@
         <name>common</name>
         <file>
           <name>$PROJ_DIR$\..\..\..\..\gui\src\common\FrontendApplication.cpp</name>
+        </file>
+      </group>
+      <group>
+        <name>fingerprint_screen</name>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\..\gui\src\fingerprint_screen\FingerPrintPresenter.cpp</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\..\gui\src\fingerprint_screen\FingerPrintView.cpp</name>
         </file>
       </group>
       <group>
