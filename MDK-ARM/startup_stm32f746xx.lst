@@ -946,10 +946,9 @@ Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.sp --apcs=
 interwork --depend=fingerprint_uart_sn-fpr\startup_stm32f746xx.d -ofingerprint_
 uart_sn-fpr\startup_stm32f746xx.o -I.\RTE\_fingerprint_UART_SN-FPR -IC:\Keil_v5
 \ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DF
-P\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include --predefine="__EVAL SETA 1" -
--predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 523" --prede
-fine="_RTE_ SETA 1" --predefine="STM32F746xx SETA 1" --list=startup_stm32f746xx
-.lst startup_stm32f746xx.s
+P\2.9.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include --predefine="__MICROLIB SETA 
+1" --predefine="__UVISION_VERSION SETA 523" --predefine="_RTE_ SETA 1" --predef
+ine="STM32F746xx SETA 1" --list=startup_stm32f746xx.lst startup_stm32f746xx.s
 
 
 
@@ -2190,4 +2189,4 @@ Symbol: __main
       At line 206 in file startup_stm32f746xx.s
 Comment: __main used once
 2 symbols
-462 symbols in table
+461 symbols in table

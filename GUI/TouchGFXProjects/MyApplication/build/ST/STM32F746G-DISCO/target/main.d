@@ -29,7 +29,7 @@ build/ST/STM32F746G-DISCO/target/main.o: target/main.cpp \
  c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\callback.hpp \
  c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\canvas_widget_renderer\cell.hpp \
  c:\touchgfx\4.8.0\touchgfx\os\freertos8.2.0\source\include\freertos.h \
- C:/TouchGFXProjects/MyApplication/platform/os/FreeRTOSConfig.h \
+ C:/Netrikkan_Projects/Fingerprint_Netrikkan/GUI/TouchGFXProjects/MyApplication/platform/os/FreeRTOSConfig.h \
  c:\touchgfx\4.8.0\touchgfx\os\freertos8.2.0\source\include\projdefs.h \
  c:\touchgfx\4.8.0\touchgfx\os\freertos8.2.0\source\include\portable.h \
  c:\touchgfx\4.8.0\touchgfx\os\freertos8.2.0\source\include\deprecated_definitions.h \
@@ -99,7 +99,7 @@ c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\canvas_widget_renderer\cel
 
 c:\touchgfx\4.8.0\touchgfx\os\freertos8.2.0\source\include\freertos.h:
 
-C:/TouchGFXProjects/MyApplication/platform/os/FreeRTOSConfig.h:
+C:/Netrikkan_Projects/Fingerprint_Netrikkan/GUI/TouchGFXProjects/MyApplication/platform/os/FreeRTOSConfig.h:
 
 c:\touchgfx\4.8.0\touchgfx\os\freertos8.2.0\source\include\projdefs.h:
 

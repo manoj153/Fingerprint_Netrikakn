@@ -2,6 +2,7 @@
 #define _FINGERPRINT_SNR_FPR_H
 #include "stm32f7xx_hal.h"
 /*includes*/
+extern UART_HandleTypeDef huart6;
 extern UART_HandleTypeDef huart1;
 /*Function Prototypes*/
 extern HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
@@ -33,8 +34,8 @@ extern uint8_t UART_Rx_Cmplt_Flag; // declared in main.c
 
 
 //CMD 
-#define CMD_HEAD		  			0xF5
-#define CMD_TAIL		  			0xF5
+#define CMD_HEAD		  			(uint8_t)0xF5
+#define CMD_TAIL		  			(uint8_t)0xF5
 #define CMD_ADD_1  		  		0x01 // adding user for first time 
 #define CMD_ADD_2 		  		0x02 // adding user for second time 
 #define CMD_ADD_3	  	  		0x03 // adding user for third time 

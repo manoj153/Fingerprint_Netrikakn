@@ -37,10 +37,22 @@
   */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stdio.h"
 #include "stm32f7xx_hal.h"
+#define ACK_SUCCESS 0x00
+//#define RTE_Compiler_IO_STDOUT_ITM 
+//#pragma import(__use_no_semihosting_swi)
+int stderr_putchar(int ch);
+int fputc(int ch, FILE *f);
 
 /* USER CODE BEGIN Includes */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
+uint8_t VerifyUser(void);
+extern uint8_t gRsLength;
+uint8_t UART_Rx_Cmplt_Flag;
+extern uint8_t gRsBuf[9];	
+//int putchar(int ch);
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -50,7 +62,16 @@ UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+struct __FILE {int handle;/* Add whatever you need here */};
 
+FILE __stdout;
+FILE __stdin;
+
+int fputc(int ch, FILE *f)
+{
+  HAL_UART_Transmit(&huart1, (uint8_t*)&ch,1, 100);
+  return(ch);
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,33 +87,29 @@ static void MX_NVIC_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
+int mark[] = {19, 10, 8, 17, 9};
+uint8_t txbuffer[] = {1,2,3,4,5,6,7,8,9,10};
 /* USER CODE END 0 */
 
 int main(void)
 {
-
+	
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-
-  /* Enable I-Cache-------------------------------------------------------------*/
-  SCB_EnableICache();
-
-  /* Enable D-Cache-------------------------------------------------------------*/
-  SCB_EnableDCache();
 
   /* MCU Configuration----------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
+	
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
+	
 
   /* USER CODE BEGIN SysInit */
 
@@ -107,20 +124,58 @@ int main(void)
   MX_NVIC_Init();
 
   /* USER CODE BEGIN 2 */
-	printf("Befote Entering main while loop");
+	 __HAL_UART_ENABLE_IT(&huart6, UART_IT_RXNE);
+	 __HAL_UART_ENABLE_IT(&huart6, UART_IT_TC);
+	 //__HAL_UART_ENABLE_IT(&huart6, UART_IT_TXE);
+	 
+	for (int x = 0; x<=50; x++)
+		printf("Befote Entering main while loop \r\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	
+		//printf("Hello \r\n");
+		//HAL_UART_Transmit_IT(&huart6, txbuffer, 5);
+		//HAL_UARTTransmit(&huart6, txbuffer, 8, 8000);
+		//**
+		VerifyUser();
+		/*if (VerifyUser() == ACK_SUCCESS )
+		{
+			//for(int i = 0; i <= 2; i++ )
+			//	{
+			//	HAL_GPIO_TogglePin(ARDUINO_D7_GPIO_Port, ARDUINO_D7_Pin);
+			//	HAL_Delay(10);
+			//	}
+			
+		
+			printf("Success Verify User");
+				
+		}
+		
+		else 
+		{
+			//printf("Failed Fingerprint Acknowlege in while \r\n");
+			HAL_GPIO_WritePin(ARDUINO_D7_GPIO_Port, ARDUINO_D7_Pin, GPIO_PIN_RESET);
+			//HAL_Delay(20);
+		}
+		
+		
+		
+		
+		*/
+		
+		
+		
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-
+	//for (int y = 0; y < 100000; y++);
   }
   /* USER CODE END 3 */
-
+			
 }
 
 /** System Clock Configuration
@@ -136,7 +191,7 @@ void SystemClock_Config(void)
     */
   __HAL_RCC_PWR_CLK_ENABLE();
 
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
 
     /**Initializes the CPU, AHB and APB busses clocks 
     */
@@ -146,7 +201,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 216;
+  RCC_OscInitStruct.PLL.PLLN = 100;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -167,10 +222,10 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -200,7 +255,7 @@ void SystemClock_Config(void)
 static void MX_NVIC_Init(void)
 {
   /* USART6_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(USART6_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(USART6_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(USART6_IRQn);
 }
 
@@ -882,13 +937,46 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	if (huart->Instance == USART1)
+	if (huart->Instance == USART6)
 	{
 		UART_Rx_Cmplt_Flag = 55; // Flag to say the Receiption were success. Will be used in Fingerprint_SNR_FPR.c
-		
+		gRsLength =8 ;
+		printf("Rcv Complete YAhhhhh \r\n");
+		printf("Rcv Complete YAhhhhh \r\n");
+		for(uint8_t y= 0; y<8; y++)
+			printf("Value Array %d = %d",y,gRsBuf[y]);
 	}
 }
 
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if (huart->Instance == USART6)
+	{
+		//UART_Rx_Cmplt_Flag = 55; // Flag to say the Receiption were success. Will be used in Fingerprint_SNR_FPR.c
+		//gRsLength =8 ;
+		//printf("Tx Complete YAhhhhh \r\n");
+		//printf("Tx Complete YAhhhhh \r\n");
+		
+	}
+
+}
+
+
+
+int stdout_putchar(int ch)
+{
+  HAL_UART_Transmit(&huart1, (uint8_t*)&ch,1, 100);
+  return(ch);
+}
+
+/*
+int stdout_putchar(int ch)
+{
+	
+ return ITM_SendChar(ch);
+  
+}
+*/
 
 /* USER CODE END 4 */
 

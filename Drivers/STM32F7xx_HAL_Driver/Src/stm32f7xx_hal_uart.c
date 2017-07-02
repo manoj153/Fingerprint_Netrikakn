@@ -179,6 +179,9 @@
   */
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+extern uint8_t gRsLength;
+			
+
 /* Private function prototypes -----------------------------------------------*/
 /** @addtogroup UART_Private_Functions
   * @{
@@ -795,7 +798,11 @@ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, ui
   {
     if((pData == NULL ) || (Size == 0U))
     {
+			#ifdef DEBUGMANOJ
+				printf("You fucking data is not valid");
+			#endif
       return  HAL_ERROR;
+			
     }
 
     /* Process Locked */
@@ -822,7 +829,7 @@ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, ui
       {
         return HAL_TIMEOUT;
       }
-      if ((huart->Init.WordLength == UART_WORDLENGTH_9B) && (huart->Init.Parity == UART_PARITY_NONE))
+      if ((huart->Init.WordLength == UART_WORDLENGTH_9B) && (huart->Init.Parity == UART_PARITY_NONE)) //for parity 
       {
         tmp = (uint16_t*) pData ;
         *tmp = (uint16_t)(huart->Instance->RDR & uhMask);
@@ -839,7 +846,7 @@ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, ui
 
     /* Process Unlocked */
     __HAL_UNLOCK(huart);
-
+		
     return HAL_OK;
   }
   else
@@ -880,6 +887,8 @@ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData
 
     /* Enable the UART Transmit Data Register Empty Interrupt */
     SET_BIT(huart->Instance->CR1, USART_CR1_TXEIE);
+		//__HAL_UART_ENABLE_IT(huart, UART_IT_TC);
+		__HAL_UART_ENABLE_IT(huart, UART_IT_TXE);
 
     return HAL_OK;
   }
@@ -927,6 +936,7 @@ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData,
 
     /* Enable the UART Parity Error and Data Register not empty Interrupts */
     SET_BIT(huart->Instance->CR1, USART_CR1_PEIE | USART_CR1_RXNEIE);
+		__HAL_UART_ENABLE_IT(huart, UART_IT_RXNE);
 
     return HAL_OK;
   }

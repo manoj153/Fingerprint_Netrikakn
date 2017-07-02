@@ -46,8 +46,12 @@
 /* Exported functions ------------------------------------------------------- */
 
 void SysTick_Handler(void);
+void PVD_IRQHandler(void);
+void FLASH_IRQHandler(void);
+void RCC_IRQHandler(void);
 void USART1_IRQHandler(void);
 void USART6_IRQHandler(void);
+void FPU_IRQHandler(void);
 
 #ifdef __cplusplus
 }

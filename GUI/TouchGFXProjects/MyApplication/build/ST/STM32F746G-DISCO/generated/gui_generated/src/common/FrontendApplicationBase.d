@@ -67,7 +67,10 @@ build/ST/STM32F746G-DISCO/generated/gui_generated/src/common/FrontendApplication
  generated/gui_generated/include/gui_generated/about_me_screen_screen/About_Me_ScreenViewBase.hpp \
  gui/include/gui/about_me_screen_screen/About_Me_ScreenPresenter.hpp \
  c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\widgets\radiobutton.hpp \
- c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\widgets\radiobuttongroup.hpp
+ c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\widgets\radiobuttongroup.hpp \
+ gui/include/gui/fingerprint_screen/FingerPrintView.hpp \
+ generated/gui_generated/include/gui_generated/fingerprint_screen/FingerPrintViewBase.hpp \
+ gui/include/gui/fingerprint_screen/FingerPrintPresenter.hpp
 
 generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
 
@@ -206,3 +209,9 @@ gui/include/gui/about_me_screen_screen/About_Me_ScreenPresenter.hpp:
 c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\widgets\radiobutton.hpp:
 
 c:\touchgfx\4.8.0\touchgfx\framework\include\touchgfx\widgets\radiobuttongroup.hpp:
+
+gui/include/gui/fingerprint_screen/FingerPrintView.hpp:
+
+generated/gui_generated/include/gui_generated/fingerprint_screen/FingerPrintViewBase.hpp:
+
+gui/include/gui/fingerprint_screen/FingerPrintPresenter.hpp:
